@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김밥 레시피</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <header>김밥 레시피</header>
+
+  <h1 id="title">레시피 제목</h1>
+
+  <div id="recipe-content" class="recipe-container"></div>
+
+  <button class="back-btn" onclick="window.history.back()">뒤로가기</button>
+  <footer>한양대 인터칼리지학과 G19</footer>
+
+  <script>
+    const recipes = {
+      "빵가루": {
+        name: "Kimbap Croquette",
+        image: "food_picture/gimbap_croquette.jpg",
+        topic_kr: "김밥을 속재료로 활용한 바삭한 고로케",
+        ingredients_kr: "김밥, 밀가루, 계란, 빵가루, 식용유",
+        steps_kr: [
+          "1. 김밥을 단단히 눌러 모양을 유지합니다.",
+          "2. 밀가루 → 계란물 → 빵가루 순으로 입힙니다.",
+          "3. 노릇하게 튀겨 완성합니다."
+        ],
+        topic_en: "Croquettes with a twist—the filling is gimbap for an extra flavorful bite!",
+        ingredients_en: "Gimbap, flour, beaten eggs, breadcrumbs, oil",
+        steps_en: [
+          "1. Press gimbap firmly to maintain shape.",
+          "2. Coat with flour → beaten eggs → breadcrumbs.",
+          "3. Deep-fry until crispy and golden brown."
+        ],
+        reference: "https://blog.naver.com/cookbad/220145102408"
+      },
+      "카레": {
+        name: "I-curry-boy",
+        image: "food_picture/gimbap_curry.jpg",
+        topic_kr: "김밥과 카레가 어우러진 간단한 볶음밥",
+        ingredients_kr: "김밥, 올리브오일, 마늘, 카레가루",
+        steps_kr: [
+          "1. 김밥을 잘게 썰어줍니다.",
+          "2. 팬에 기름을 두르고 마늘을 볶습니다.",
+          "3. 김밥을 넣고 잘게 부수며 볶습니다.",
+          "4. 카레 육수를 부어 약불로 볶아 마무리합니다."
+        ],
+        topic_en: "Simple yet delicious fried rice made with gimbap and curry powder.",
+        ingredients_en: "Gimbap, olive oil, garlic, curry powder",
+        steps_en: [
+          "1. Finely chop gimbap.",
+          "2. Heat olive oil and fry garlic.",
+          "3. Add gimbap and break it apart while stirring.",
+          "4. Pour in curry broth and sauté over low heat."
+        ],
+        reference: "https://www.10000recipe.com/recipe/4496052"
+      },
+      "피자 치즈": {
+        name: "Gimbap Pizza Cheese Bake",
+        image: "food_picture/gimbap_pizza.jpg",
+        topic_kr: "남은 김밥을 활용한 치즈 가득한 오븐 요리",
+        ingredients_kr: "김밥 2~3줄, 피자 치즈, 토마토소스, 파슬리, 올리브오일, 후추",
+        steps_kr: [
+          "1. 김밥을 1~2cm 두께로 썹니다.",
+          "2. 팬에 기름을 두르고 김밥을 깝니다.",
+          "3. 토마토소스를 펴 바르고 치즈와 후추, 파슬리를 뿌립니다.",
+          "4. 오븐 또는 에어프라이어에 구워 완성합니다."
+        ],
+        topic_en: "Transform leftover gimbap into a cheesy, savory bake with tomato sauce.",
+        ingredients_en: "Leftover gimbap, pizza cheese, tomato sauce, parsley, olive oil, black pepper",
+        steps_en: [
+          "1. Slice gimbap into rounds.",
+          "2. Oil a pan and layer gimbap slices.",
+          "3. Spread tomato sauce and top with cheese and seasoning.",
+          "4. Bake until cheese is golden and bubbly."
+        ],
+        reference: "https://hls3790.tistory.com/"
+      },
+      "튀김": {
+        name: "Gimbap Arancini",
+        image: "food_picture/gimbap_arancini.jpg",
+        topic_kr: "남은 김밥으로 만드는 이탈리안 퓨전 아란치니",
+        ingredients_kr: "김밥 2~3줄, 모짜렐라 큐브, 밀가루, 계란, 빵가루, 식용유, 토마토소스",
+        steps_kr: [
+          "1. 김밥을 잘게 썰어 으깹니다.",
+          "2. 모짜렐라를 속에 넣고 동그랗게 빚습니다.",
+          "3. 밀가루 → 계란 → 빵가루 순으로 묻힙니다.",
+          "4. 기름에 튀기고 소스와 함께 제공합니다."
+        ],
+        topic_en: "Crispy, cheesy Korean-Italian fusion balls using leftover gimbap",
+        ingredients_en: "Gimbap, mozzarella cubes, flour, eggs, breadcrumbs, oil, tomato sauce",
+        steps_en: [
+          "1. Chop and mash gimbap.",
+          "2. Insert cheese, form into a ball.",
+          "3. Coat in flour, egg, and breadcrumbs.",
+          "4. Deep-fry and serve with sauce."
+        ],
+        reference: "https://www.10000recipe.com/recipe/6833166"
+      },
+      "돈까스": {
+        name: "Fried Gimbap Cutlet",
+        image: "food_picture/gimbap_cutlet.jpg",
+        topic_kr: "남은 김밥을 돈까스처럼 튀긴 바삭한 레시피",
+        ingredients_kr: "김밥 2~3줄, 밀가루, 계란, 빵가루, 식용유",
+        steps_kr: [
+          "1. 김밥을 통째로 또는 적당히 자릅니다.",
+          "2. 밀가루 → 계란 → 빵가루 순으로 입힙니다.",
+          "3. 170~180도에서 노릇하게 튀깁니다.",
+          "4. 소스와 함께 제공합니다."
+        ],
+        topic_en: "Crispy gimbap cutlet fried katsu-style",
+        ingredients_en: "Leftover gimbap, flour, eggs, breadcrumbs, oil",
+        steps_en: [
+          "1. Slice gimbap or keep whole.",
+          "2. Dredge in flour, dip in egg, coat with breadcrumbs.",
+          "3. Deep-fry until golden brown.",
+          "4. Serve with tonkatsu sauce."
+        ],
+        reference: "https://blog.naver.com/yangi282/220446497942"
+      }
+    };
+
+    const selected = localStorage.getItem("selectedIngredient");
+    const recipe = recipes[selected];
+
+    if (recipe) {
+      document.getElementById("title").textContent = recipe.name;
+      const container = document.getElementById("recipe-content");
+      const stepsKr = recipe.steps_kr.map(step => `<li>${step}</li>`).join("");
+      const stepsEn = recipe.steps_en.map(step => `<li>${step}</li>`).join("");
+
+      container.innerHTML = `
+        <img src="${recipe.image}" alt="${recipe.name}" class="recipe-img">
+
+        <div class="section-label">한국어</div>
+        <p><strong>주제:</strong> ${recipe.topic_kr}</p>
+        <p><strong>재료:</strong> ${recipe.ingredients_kr}</p>
+        <h3>레시피 설명</h3>
+        <ul>${stepsKr}</ul>
+
+        <div class="section-label">English</div>
+        <p><strong>Topic:</strong> ${recipe.topic_en}</p>
+        <p><strong>Ingredients:</strong> ${recipe.ingredients_en}</p>
+        <h3>Recipe Instructions</h3>
+        <ul>${stepsEn}</ul>
+
+        <p class="reference">
+          🔗 Reference: <a href="${recipe.reference}" target="_blank">${recipe.reference}</a>
+        </p>
+      `;
+    } else {
+      document.getElementById("recipe-content").innerHTML = "<p>선택된 재료가 없습니다.</p>";
+    }
+  </script>
+</body>
+</html>

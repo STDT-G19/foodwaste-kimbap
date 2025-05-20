@@ -1,0 +1,177 @@
+/* 전체 페이지 기본 설정 */
+body {
+  font-family: 'Pretendard', 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0 20px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* 제목, 부제목 중앙 정렬 */
+h1,
+.subtitle,
+header {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* 재료 선택 컨테이너 */
+.ingredient-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  gap: 20px;
+}
+
+/* 개별 재료 카드 */
+.ingredient {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.ingredient:hover {
+  transform: translateY(-5px);
+  border-color: #ff9800;
+}
+
+.ingredient.selected {
+  border-color: #ff9800;
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+}
+
+/* 이미지 - 정사각형 비율 유지 */
+.ingredient img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 재료 이름 텍스트 */
+.ingredient span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* 다음으로 버튼 */
+.next-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: #ddd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed;
+  pointer-events: none;
+  transition: background-color 0.2s;
+}
+
+.next-btn.active {
+  background-color: #ff9800;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.next-btn.active:hover {
+  background-color: #e68900;
+}
+
+/* 레시피 결과 페이지 전용 컨테이너 */
+.recipe-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 레시피 이미지 */
+.recipe-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 구분 라벨 */
+.section-label {
+  font-size: 1.2em;
+  margin-top: 30px;
+  color: #e67e22;
+  border-bottom: 2px solid #f6c190;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* 레시피 텍스트 영역 */
+.recipe-text {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.recipe-text ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+/* 출처 */
+.reference {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* 뒤로가기 버튼 */
+.back-btn {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #d35400;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #e67e22;
+}
+
+/* 푸터 */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #777;
+  padding-bottom: 20px;
+  border-top: 1px solid #ddd;
+}
