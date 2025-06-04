@@ -14,7 +14,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2>재료를 선택하세요</h2>
-        <button class="close-btn" onclick="closeModal()">X</button>
+        <button class="close-btn" onclick="goToHome()">X</button>
       </div>
       <div class="category-tabs">
         <button onclick="filterCategory('국물요리')">🍲 국물요리</button>
@@ -34,19 +34,20 @@
   <script>
     let selectedIngredient = "";
 
-    // 모달 자동 열기
     window.onload = () => {
       document.getElementById("ingredient-modal").style.display = "block";
-      filterCategory("국물요리");
+      filterCategory("국물요리", true); // true 전달해서 첫 아이템 선택
     };
 
-    function closeModal() {
-      document.getElementById("ingredient-modal").style.display = "none";
+    function goToHome() {
+      window.location.href = window.location.pathname; // 페이지 초기화
     }
 
-    function filterCategory(category) {
+    function filterCategory(category, autoSelect = false) {
       const container = document.getElementById("ingredient-list");
       container.innerHTML = "";
+      let firstEl = null;
+
       Object.entries(recipes).forEach(([key, data]) => {
         if (data.category === category) {
           const div = document.createElement("div");
@@ -60,8 +61,13 @@
           `;
 
           container.appendChild(div);
+          if (!firstEl) firstEl = div;
         }
       });
+
+      if (autoSelect && firstEl) {
+        selectIngredient(firstEl);
+      }
     }
 
     function selectIngredient(el) {
