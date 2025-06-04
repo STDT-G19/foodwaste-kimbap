@@ -24,7 +24,33 @@ header {
   color: #666;
 }
 
-/* 재료 선택 컨테이너 */
+/* 카테고리 버튼 */
+.category-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto 0;
+  flex-wrap: wrap;
+}
+
+.category-bar button {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border: none;
+  background-color: #ddd;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.category-bar button.active,
+.category-bar button:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
+/* 재료 카드 컨테이너 */
 .ingredient-container {
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +60,7 @@ header {
   gap: 20px;
 }
 
-/* 개별 재료 카드 */
+/* 재료 카드 */
 .ingredient {
   background-color: #ffffff;
   border: 2px solid #e0e0e0;
@@ -56,7 +82,6 @@ header {
   box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
 }
 
-/* 이미지 - 정사각형 비율 유지 */
 .ingredient img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -64,7 +89,6 @@ header {
   border-radius: 8px;
 }
 
-/* 재료 이름 텍스트 */
 .ingredient span {
   display: block;
   margin-top: 10px;
@@ -72,7 +96,7 @@ header {
   font-weight: 500;
 }
 
-/* 다음으로 버튼 */
+/* 다음 버튼 */
 .next-btn {
   display: block;
   margin: 40px auto;
@@ -97,7 +121,7 @@ header {
   background-color: #e68900;
 }
 
-/* 레시피 결과 페이지 전용 컨테이너 */
+/* 레시피 결과 페이지 컨테이너 */
 .recipe-container {
   max-width: 900px;
   margin: 40px auto;
@@ -107,7 +131,6 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* 레시피 이미지 */
 .recipe-img {
   width: 100%;
   max-width: 400px;
@@ -118,7 +141,6 @@ header {
   object-fit: cover;
 }
 
-/* 구분 라벨 */
 .section-label {
   font-size: 1.2em;
   margin-top: 30px;
@@ -128,7 +150,6 @@ header {
   padding-bottom: 5px;
 }
 
-/* 레시피 텍스트 영역 */
 .recipe-text {
   text-align: left;
   max-width: 800px;
@@ -140,7 +161,6 @@ header {
   line-height: 1.6;
 }
 
-/* 출처 */
 .reference {
   font-size: 0.9em;
   font-style: italic;
@@ -148,7 +168,6 @@ header {
   margin-top: 20px;
 }
 
-/* 뒤로가기 버튼 */
 .back-btn {
   display: block;
   margin: 40px auto 0;
@@ -166,7 +185,6 @@ header {
   background-color: #e67e22;
 }
 
-/* 푸터 */
 footer {
   margin-top: 50px;
   text-align: center;

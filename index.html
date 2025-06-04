@@ -10,41 +10,66 @@
   <h1>FOODWASTE - 김밥</h1>
   <p class="subtitle">남은 재료를 골라 새로운 김밥 요리로 바꿔보세요! (하나만)</p>
 
-  <div class="ingredient-container">
-    <div class="ingredient" data-name="빵가루" onclick="selectIngredient(this)">
-      <img src="food_picture/bbanggaru.jpg" alt="빵가루">
-      <span>빵가루</span>
-    </div>
-    <div class="ingredient" data-name="카레" onclick="selectIngredient(this)">
-      <img src="food_picture/curry.jpg" alt="카레">
-      <span>카레</span>
-    </div>
-    <div class="ingredient" data-name="피자 치즈" onclick="selectIngredient(this)">
-      <img src="food_picture/cheese.jpg" alt="피자 치즈">
-      <span>피자 치즈</span>
-    </div>
-    <div class="ingredient" data-name="튀김" onclick="selectIngredient(this)">
-      <img src="food_picture/fry.jpg" alt="튀김">
-      <span>튀김</span>
-    </div>
-    <div class="ingredient" data-name="돈까스" onclick="selectIngredient(this)">
-      <img src="food_picture/donkatsu.jpg" alt="돈까스">
-      <span>돈까스</span>
+  <button class="open-modal" onclick="openModal()">재료 고르기</button>
+
+  <div id="ingredient-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>재료를 선택하세요</h2>
+        <button class="close-btn" onclick="closeModal()">X</button>
+      </div>
+      <div class="category-tabs">
+        <button onclick="filterCategory('국물요리')">🍲 국물요리</button>
+        <button onclick="filterCategory('프라이팬 요리')">🍳 프라이팬 요리</button>
+        <button onclick="filterCategory('오븐요리')">🔥 오븐요리</button>
+        <button onclick="filterCategory('퓨전김밥')">🍙 퓨전김밥</button>
+        <button onclick="filterCategory('볶음/기타')">🥘 볶음/기타</button>
+      </div>
+      <div id="ingredient-list" class="ingredient-container"></div>
+      <button class="next-btn" id="confirmBtn" onclick="goToNextPage()">확인</button>
     </div>
   </div>
 
-  <button class="next-btn" onclick="goToNextPage()">다음으로</button>
-
   <footer>한양대 인터칼리지학과 G19</footer>
 
+  <script src="recipes.js"></script>
   <script>
     let selectedIngredient = "";
+
+    function openModal() {
+      document.getElementById("ingredient-modal").classList.remove("hidden");
+      filterCategory("국물요리"); // 기본 카테고리 로드
+    }
+
+    function closeModal() {
+      document.getElementById("ingredient-modal").classList.add("hidden");
+    }
+
+    function filterCategory(category) {
+      const container = document.getElementById("ingredient-list");
+      container.innerHTML = "";
+      Object.entries(recipes).forEach(([key, data]) => {
+        if (data.category === category) {
+          const div = document.createElement("div");
+          div.className = "ingredient";
+          div.dataset.name = key;
+          div.onclick = () => selectIngredient(div);
+
+          div.innerHTML = `
+            <img src="food_picture/${data.image}" alt="${key}" />
+            <span>${key}</span>
+          `;
+
+          container.appendChild(div);
+        }
+      });
+    }
 
     function selectIngredient(el) {
       document.querySelectorAll('.ingredient').forEach(i => i.classList.remove('selected'));
       el.classList.add('selected');
       selectedIngredient = el.dataset.name;
-      document.querySelector('.next-btn').classList.add('active');
+      document.getElementById('confirmBtn').classList.add('active');
     }
 
     function goToNextPage() {
