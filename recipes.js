@@ -3,7 +3,7 @@
 const recipes = {
   "빵가루": {
     category: "퓨전김밥",
-    name: "Kimbap Croquette",
+    name: "김밥 크로켓",
     image: "gimbap_croquette.jpg",
     topic_kr: "김밥을 속재료로 활용한 바삭한 고로케",
     ingredients_kr: "김밥, 밀가루, 계란, 빵가루, 식용유",
@@ -45,7 +45,7 @@ const recipes = {
   },
   "피자 치즈": {
     category: "오븐요리",
-    name: "Gimbap Pizza Cheese Bake",
+    name: "김밥피자치즈 요리",
     image: "gimbap_pizza.jpg",
     topic_kr: "남은 김밥을 활용한 치즈 가득한 오븐 요리",
     ingredients_kr: "김밥 2~3줄, 피자 치즈, 토마토소스, 파슬리, 올리브오일, 후추",
@@ -67,7 +67,7 @@ const recipes = {
   },
   "튀김": {
     category: "퓨전김밥",
-    name: "Gimbap Arancini",
+    name: "김밥아란치니",
     image: "gimbap_arancini.jpg",
     topic_kr: "남은 김밥으로 만드는 이탈리안 퓨전 아란치니",
     ingredients_kr: "김밥 2~3줄, 모짜렐라 큐브, 밀가루, 계란, 빵가루, 식용유, 토마토소스",
@@ -89,7 +89,7 @@ const recipes = {
   },
   "돈까스": {
     category: "프라이팬 요리",
-    name: "Fried Gimbap Cutlet",
+    name: "김밥돈까스",
     image: "gimbap_cutlet.jpg",
     topic_kr: "남은 김밥을 돈까스처럼 튀긴 바삭한 레시피",
     ingredients_kr: "김밥 2~3줄, 밀가루, 계란, 빵가루, 식용유",
@@ -109,9 +109,9 @@ const recipes = {
     ],
     reference: "https://blog.naver.com/yangi282/220446497942"
   },
-  "김밥 떡볶이": {
+  "떡볶이": {
     category: "국물요리",
-    name: "Gimbap Tteokbokki",
+    name: "김밥 떡볶이",
     image: "gimbap_tteokbokki.jpg",
     topic_kr: "김밥을 떡볶이 국물에 찍어먹는 것보다 진한 맛이 나는 김밥떡볶이",
     ingredients_kr: "쌀떡, 어묵, 깻잎, 진간장, 올리고당, 김밥, 양파, 아마씨가루, 멸치채소국물",
@@ -135,9 +135,9 @@ const recipes = {
     ],
     reference: "https://www.10000recipe.com/recipe/6971094"
   },
-  "김밥 오꼬노미야끼": {
+  "오꼬노미야끼": {
     category: "프라이팬 요리",
-    name: "Gimbap Okonomiyaki",
+    name: "김밥 오꼬노미야끼",
     image: "gimbap_okonomiyaki.jpg",
     topic_kr: "김밥을 오꼬노미야끼 스타일로 만든 맛있는 술안주",
     ingredients_kr: "김밥, 계란, 가쓰오부시, 데리야끼소스, 마요네즈",
@@ -157,9 +157,9 @@ const recipes = {
     ],
     reference: "https://blog.naver.com/luckygirl50/223117150205"
   },
-  "김밥죽": {
+  "죽": {
     category: "국물요리",
-    name: "Gimbap Porridge",
+    name: "김밥죽",
     image: "gimbap_porridge.jpg",
     topic_kr: "남은 딱딱한 김밥으로 만들 수 있는 색다른 별미 김밥죽",
     ingredients_kr: "참기름, 대파, 신김치, 다진 마늘, 고춧가루, 멸치 액젓, 국간장, 물, 김밥, 멸치 코인 육수, 쇠고기 다시다, 콩나물, 깨소금, 김가루",
@@ -179,9 +179,9 @@ const recipes = {
     ],
     reference: "https://www.youtube.com/shorts/VhrvL-Lf0pM"
   },
-  "김밥 라자냐": {
+  "라자냐": {
     category: "오븐요리",
-    name: "Kimbap Lasagna",
+    name: "김밥라자냐",
     image: "gimbap_lasagna.jpg",
     topic_kr: "김밥을 얇게 잘라 라자냐 시트처럼 쌓아 만든 오븐 요리",
     ingredients_kr: "김밥, 토마토소스, 모짜렐라 치즈, 파마산 치즈, 바질",
@@ -201,9 +201,9 @@ const recipes = {
     ],
     reference: "https://www.10000recipe.com/recipe/6947878"
   },
-  "김밥 크림 그라탕": {
+  "크림 그라탕": {
     category: "오븐요리",
-    name: "Kimbap Cream Gratin",
+    name: "김밥 크림 그라탕",
     image: "gimbap_gratin.jpg",
     topic_kr: "크리미한 화이트소스와 어우러지는 김밥 베이크 스타일",
     ingredients_kr: "김밥, 버터, 밀가루, 우유, 소금, 후추, 치즈",
