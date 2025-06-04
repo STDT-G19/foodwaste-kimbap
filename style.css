@@ -24,7 +24,11 @@ header {
   color: #666;
 }
 
-/* 모달 중앙 정렬 */
+/* 모달 항상 보이도록 변경 */
+#ingredient-modal {
+  display: block !important;
+}
+
 .modal-content {
   max-width: 600px;
   margin: 40px auto;
