@@ -10,9 +10,7 @@
   <h1>FOODWASTE - 김밥</h1>
   <p class="subtitle">남은 재료를 골라 새로운 김밥 요리로 바꿔보세요! (하나만)</p>
 
-  <button class="open-modal" onclick="openModal()">재료 고르기</button>
-
-  <div id="ingredient-modal" class="modal hidden">
+  <div id="ingredient-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
         <h2>재료를 선택하세요</h2>
@@ -36,13 +34,14 @@
   <script>
     let selectedIngredient = "";
 
-    function openModal() {
-      document.getElementById("ingredient-modal").classList.remove("hidden");
-      filterCategory("국물요리"); // 기본 카테고리 로드
-    }
+    // 모달 자동 열기
+    window.onload = () => {
+      document.getElementById("ingredient-modal").style.display = "block";
+      filterCategory("국물요리");
+    };
 
     function closeModal() {
-      document.getElementById("ingredient-modal").classList.add("hidden");
+      document.getElementById("ingredient-modal").style.display = "none";
     }
 
     function filterCategory(category) {
