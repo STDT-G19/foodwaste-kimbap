@@ -36,17 +36,16 @@
 
     window.onload = () => {
       document.getElementById("ingredient-modal").style.display = "block";
-      filterCategory("국물요리", true); // true 전달해서 첫 아이템 선택
+      filterCategory("국물요리");
     };
 
     function goToHome() {
-      window.location.href = window.location.pathname; // 페이지 초기화
+      window.location.href = window.location.pathname;
     }
 
-    function filterCategory(category, autoSelect = false) {
+    function filterCategory(category) {
       const container = document.getElementById("ingredient-list");
       container.innerHTML = "";
-      let firstEl = null;
 
       Object.entries(recipes).forEach(([key, data]) => {
         if (data.category === category) {
@@ -61,13 +60,8 @@
           `;
 
           container.appendChild(div);
-          if (!firstEl) firstEl = div;
         }
       });
-
-      if (autoSelect && firstEl) {
-        selectIngredient(firstEl);
-      }
     }
 
     function selectIngredient(el) {
