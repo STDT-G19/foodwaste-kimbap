@@ -24,28 +24,63 @@ header {
   color: #666;
 }
 
+/* 모달 중앙 정렬 */
+.modal-content {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  font-size: 1rem;
+  padding: 4px 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 /* 카테고리 버튼 */
-.category-bar {
+.category-tabs {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 20px auto 0;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
-.category-bar button {
+.category-tabs button {
   padding: 8px 16px;
   font-size: 0.95rem;
   border: none;
-  background-color: #ddd;
+  background-color: #ffffff;
   color: #333;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.category-bar button.active,
-.category-bar button:hover {
+.category-tabs button.active,
+.category-tabs button:hover {
   background-color: #ff9800;
   color: white;
 }
